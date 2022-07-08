@@ -3,14 +3,24 @@
 
 echo $1
 
-if [[ "$1" == *".py" ]]; then
-    exec python3 $1
-fi
+case $1 in
 
-if [[ "$1" == *".sh" ]]; then
-    exec bash $1
-fi
+*.py)
+python3 $1
+;;
 
-if [[ "$1" == *".cc" ]]; then
-    exec cat $1
-fi
+*.sh)
+python3 $1
+;;
+
+*.cc)
+python3 $1
+;;
+
+*)
+echo "cannot be opened"
+;;
+
+esac
+
+    
