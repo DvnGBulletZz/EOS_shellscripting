@@ -10,11 +10,11 @@ python3 $1
 ;;
 
 *.sh)
-python3 $1
+bash $1
 ;;
 
 *.cc)
-python3 $1
+cat $1
 ;;
 
 *)
