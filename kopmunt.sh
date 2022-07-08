@@ -1,18 +1,27 @@
  #!/usr/bin/env bash
 
 while true; do
-    echo "---heads or tails---- (lowercase)"
-    echo "put in q to quit"
-    read input
+    # echo "---heads or tails---- (lowercase)"
+    # echo "put in q to quit"
+    # read input
 
-    if [ "$input" == q ]; then
-        break
-    fi
+    # if [ "$input" == q ]; then
+    #     break
+    # fi
 
-    while [[ "$input" != "heads" && "$input" != "tails" ]]; do
-        echo "wrong input give heads or tails as input"
+    while true; do
         echo "heads or tails (lowercase)"
+        echo -e "put in q to quit\n"
         read input
+        if [ "$input" == q ]; then
+            exit
+        
+        elif [[ "$input" != "heads" && "$input" != "tails" ]]; then
+            echo -e "\nwrong input give heads or tails as input"
+        else
+            break
+        fi
+        
     done
 
 
@@ -24,13 +33,14 @@ while true; do
         anwser="tails"
     fi
 
-    echo "your anwser is $input"
-    echo "the coin shows $anwser"
+    echo  -e "\nyour anwser is $input"
+    echo -e "\nthe coin shows $anwser"
+    
 
     if [ "$input" = "$anwser" ]; then
-        echo "you won"
+        echo -e "you won\n"
     else
-        echo "you lost"
+        echo -e "you lost\n"
 
     fi
 done
